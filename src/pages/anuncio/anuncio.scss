@@ -1,0 +1,55 @@
+page-anuncio {
+font-family: 'Lato', cursive;
+.fondo{
+
+			background: color($colors, danger, base);
+		}
+
+
+		.grid-container {
+  display: grid;
+  grid-template-columns: auto auto ;
+  padding: 10px;
+}
+.grid-item {
+ font-size: 30px;
+    text-align: center;
+    padding: 23px;
+    border-radius: 50%;
+    padding-top: 3px;
+    padding-bottom: 1px;
+
+
+    img{
+
+     border-radius: 2px;
+
+    }
+}
+
+ div.upload {
+        width: 100px;
+        height: 100px;
+        
+        overflow: hidden;
+        border: 1px dashed #607d8b;
+        margin-bottom: 13px;
+        display: inline-block;
+        position: relative;
+    }
+    div.upload input {
+            display: block !important;
+		    width: 100px !important;
+		    height: 100px !important;
+		    opacity: 0 !important;
+		    z-index: 1000;
+		    overflow: hidden !important;
+		    position: absolute;
+		    /* top: 281px; */
+		    left: 0px;
+		    bottom: 4px;
+
+    }
+
+
+}

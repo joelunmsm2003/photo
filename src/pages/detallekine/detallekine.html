@@ -1,0 +1,51 @@
+
+
+<ion-content class='fondo'>
+
+
+
+    <ion-icon padding name="close" style='color:#fff; font-size:36px; position:fixed; right: 5px;z-index:1000'  (click)='closeModal()' ></ion-icon>
+
+
+    <ion-slides   slidesPerView=1>
+
+  <ion-slide  *ngFor = 'let c of detallekine.photo'>
+
+   <img *ngIf='c.imagen' src="{{c.imagen}}" alt="">
+
+    <img *ngIf='c.photo' src="http://mylookxpressapp.com:2000/{{c.photo}}" alt="">
+
+
+  </ion-slide>
+
+  
+
+</ion-slides>
+
+<p padding style='color: #fff;
+    line-height: 20px;'>
+
+	{{detallekine.contenido}}
+
+</p>
+
+
+</ion-content>
+
+<ion-footer>
+
+ <ion-toolbar color='light' style='text-align: center;'>
+    
+    
+
+  <ion-buttons >
+      <a href='tel:+51{{detallekine.telefono}}"' full ion-button color='dark'>Llamar</a>
+
+      <a target="_blank"  ion-button color='secondary' full href="https://wa.me/51{{detallekine.telefono}}?text=Hola%20amiga%20vi%20tu%20anuncio">Whatsaapp</a>
+
+    </ion-buttons>
+
+
+  </ion-toolbar>
+
+</ion-footer>

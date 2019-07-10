@@ -6,8 +6,14 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { DetallekinePage } from '../pages/detallekine/detallekine';
+import { FiltroPage } from '../pages/filtro/filtro';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { ChatPage } from '../pages/chat/chat';
+import { AnuncioPage } from '../pages/anuncio/anuncio';
+import { FilterPipe } from '../pipes/filter/filter';
+import { HttpClientModule,HttpClient } from '@angular/common/http'; 
+import { Http, RequestOptions, HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -17,10 +23,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    DetallekinePage,
+    FiltroPage,
+    ChatPage,
+    AnuncioPage,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,7 +42,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    DetallekinePage,
+    FiltroPage,
+    AnuncioPage,
+    ChatPage
   ],
   providers: [
     StatusBar,

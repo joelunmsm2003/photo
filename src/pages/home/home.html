@@ -1,17 +1,46 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color='dark'>
+    <ion-title>Loquillas </ion-title>
   </ion-navbar>
+
+    
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content >
+
+
+<div class="wrapper" style="padding:2px;">
+  <div class='columns'>
+    <div class="grid" *ngFor = 'let c of kines ' (click)='detalle(c)'>
+    
+            <img *ngIf='c.origen=="Photokines"' src="{{c.photo[0]['imagen']}}">
+
+
+            
+            <img *ngIf='c.origen=="Loquillas"' src="http://142.93.202.255:2000/{{c.photo[0]['photo']}}">
+
+            <img *ngIf='c.origen=="Skoka"' src="{{c.photo[0]['imagen']}}">
+            
+            <div style="padding-left:10px; padding-bottom: 10px; color:#234;">
+            <span *ngIf='c.distrito'>{{c.distrito}}<br></span>
+            <span *ngIf='c.precio'>{{c.precio}}<br></span>
+            <span *ngIf='c.edad'>{{c.edad}}</span> 
+
+          </div>
+
+    </div>
+  </div>
+</div>
+
+
 </ion-content>
+
+
+<ion-footer>
+
+<ion-toolbar color='light' style='text-align: center'>
+
+<button ion-button color='secondary' (click)='filtro()'>Filtro</button>
+        <button ion-button color='danger' (click)='publica()'>Publica tu anuncio</button>
+</ion-toolbar>
+</ion-footer>

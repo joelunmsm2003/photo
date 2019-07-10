@@ -1,3 +1,44 @@
 page-home {
 
+font-family: 'Lato', cursive;
+
+
+	.item-md ion-thumbnail ion-img, .item-md ion-thumbnail img {
+    width: 80px;
+    height: auto;
+}
+
+.toolbar-title{
+
+	font-family: 'Nothing You Could Do';
+	font-size:40px !important;
+}
+
+
+
+.columns{
+	column-count:2;
+	column-gap:15px;
+	column-fill:auto;
+
+}
+
+.grid{
+
+	display: inline-block;
+	transition:all .2s ease;
+	    background: #ffffff;
+    border: 1px solid #d9cde6;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    padding:0px;
+}
+		
+
+.grid img{
+
+	width: 100%;
+	margin-bottom: 5px;
+}
+
 }
