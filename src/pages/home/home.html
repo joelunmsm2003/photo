@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-navbar color='dark'>
-    <ion-title>Loquillas </ion-title>
+  <ion-navbar color='danger'>
+    <ion-title>Kines </ion-title>
   </ion-navbar>
 
     
@@ -19,7 +19,7 @@
             
             <img *ngIf='c.origen=="Loquillas"' src="http://142.93.202.255:2000/{{c.photo[0]['photo']}}">
 
-            <img *ngIf='c.origen=="Skoka"' src="{{c.photo[0]['imagen']}}">
+            <img *ngIf='c.origen=="Skoka" && c.photo[0]' src="{{c.photo[0]['imagen']}}">
             
             <div style="padding-left:10px; padding-bottom: 10px; color:#234;">
             <span *ngIf='c.distrito'>{{c.distrito}}<br></span>
@@ -38,9 +38,9 @@
 
 <ion-footer>
 
-<ion-toolbar color='light' style='text-align: center'>
+<ion-toolbar color='dark' style='text-align: center'>
 
-<button ion-button color='secondary' (click)='filtro()'>Filtro</button>
+<button ion-button color='dark' (click)='filtro()'>Filtro</button>
         <button ion-button color='danger' (click)='publica()'>Publica tu anuncio</button>
 </ion-toolbar>
 </ion-footer>
