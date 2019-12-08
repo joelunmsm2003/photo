@@ -1,6 +1,6 @@
 page-home {
 
-font-family: 'Lato', cursive;
+font-family: 'Work Sans', cursive;
 
 
 	.item-md ion-thumbnail ion-img, .item-md ion-thumbnail img {
@@ -10,14 +10,16 @@ font-family: 'Lato', cursive;
 
 .toolbar-title{
 
-	font-family: 'Nothing You Could Do';
-	font-size:40px !important;
+
+	font-family: 'Work Sans', serif;
+
+	font-size:30px !important;
 }
 
 
 
 .columns{
-	column-count:2;
+	column-count:4;
 	column-gap:15px;
 	column-fill:auto;
 
@@ -39,6 +41,28 @@ font-family: 'Lato', cursive;
 
 	width: 100%;
 	margin-bottom: 5px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+.columns{
+	column-count:2;
+	column-gap:15px;
+	column-fill:auto;
+
+}
+
+
+.modal-wrapper {
+    left: calc(50% - (600px/2));
+    top: calc(50% - (600px/2));
+    position: absolute;
+    width: 600px;
+    height: 600px;
+}
+
 }
 
 }

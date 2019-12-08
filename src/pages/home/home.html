@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color='danger'>
-    <ion-title>Kines </ion-title>
+    <ion-title>Peladas </ion-title>
   </ion-navbar>
 
     
@@ -13,11 +13,11 @@
   <div class='columns'>
     <div class="grid" *ngFor = 'let c of kines ' (click)='detalle(c)'>
     
-            <img *ngIf='c.origen=="Photokines"' src="{{c.photo[0]['imagen']}}">
+            <img *ngIf='c.origen=="Photokines" && c.photo[0]["imagen"]' src="{{c.photo[0]['imagen']}}">
 
 
             
-            <img *ngIf='c.origen=="Loquillas"' src="http://142.93.202.255:2000/{{c.photo[0]['photo']}}">
+            <img *ngIf='c.origen=="Loquillas" && c.photo[0]' src="http://aniavestidos.com:5000/{{c.photo[0]['photo']}}">
 
             <img *ngIf='c.origen=="Skoka" && c.photo[0]' src="{{c.photo[0]['imagen']}}">
             
@@ -38,7 +38,7 @@
 
 <ion-footer>
 
-<ion-toolbar color='dark' style='text-align: center'>
+<ion-toolbar  style='text-align: center'>
 
 <button ion-button color='dark' (click)='filtro()'>Filtro</button>
         <button ion-button color='danger' (click)='publica()'>Publica tu anuncio</button>

@@ -21,7 +21,7 @@ kines_respaldo:any;
 
 
 
-  	this.http.get('http://142.93.202.255:2000/kines')
+  	this.http.get('http://aniavestidos.com:5000/kines')
     .subscribe(
       data => {
 
@@ -151,7 +151,7 @@ kines_respaldo:any;
 
 
      
-    this.http.get('http://142.93.202.255:2000/kines')
+    this.http.get('http://aniavestidos.com:5000/kines')
     .subscribe(
       data => {
 

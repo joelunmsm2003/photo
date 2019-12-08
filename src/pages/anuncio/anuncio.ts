@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { Http,RequestOptions, Headers } from '@angular/http';
+import { LoadingController } from 'ionic-angular';
 /**
  * Generated class for the AnuncioPage page.
  *
@@ -18,6 +19,8 @@ export class AnuncioPage {
 
 	anuncio:any={}
 
+  loader:any
+
 	edad:any=['18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
 
 	distrito:any=['San Juan de Miraflores','Lince','San Martin de Porras','Los Olivos','Miraflores','Surquillo']
@@ -26,21 +29,29 @@ export class AnuncioPage {
 
 
 
-  constructor(private http: Http,public navCtrl: NavController, public navParams: NavParams,private view:ViewController) {
+  constructor(public loadingCtrl: LoadingController,private http: Http,public navCtrl: NavController, public navParams: NavParams,private view:ViewController) {
  	
 
  	this.anuncio.imagen=[
- 	{'id':0,'imagen':'https://i.pinimg.com/originals/90/6e/8e/906e8ef7d483e5f134754b134184f457.jpg'},
- 	{'id':1,'imagen':'https://i.pinimg.com/originals/90/6e/8e/906e8ef7d483e5f134754b134184f457.jpg'},
- 	{'id':2,'imagen':'https://i.pinimg.com/originals/90/6e/8e/906e8ef7d483e5f134754b134184f457.jpg'},
- 	{'id':3,'imagen':'https://i.pinimg.com/originals/90/6e/8e/906e8ef7d483e5f134754b134184f457.jpg'},
- 	{'id':4,'imagen':'https://i.pinimg.com/originals/90/6e/8e/906e8ef7d483e5f134754b134184f457.jpg'},
- 	{'id':5,'imagen':'https://i.pinimg.com/originals/90/6e/8e/906e8ef7d483e5f134754b134184f457.jpg'}
+ 	{'id':0,'imagen':'https://cdn4.vectorstock.com/i/thumb-large/98/08/default-photo-placeholder-vector-20889808.jpg'},
+ 	{'id':1,'imagen':'https://cdn4.vectorstock.com/i/thumb-large/98/08/default-photo-placeholder-vector-20889808.jpg'},
+ 	{'id':2,'imagen':'https://cdn4.vectorstock.com/i/thumb-large/98/08/default-photo-placeholder-vector-20889808.jpg'},
+ 	{'id':3,'imagen':'https://cdn4.vectorstock.com/i/thumb-large/98/08/default-photo-placeholder-vector-20889808.jpg'},
+ 	{'id':4,'imagen':'https://cdn4.vectorstock.com/i/thumb-large/98/08/default-photo-placeholder-vector-20889808.jpg'},
+ 	{'id':5,'imagen':'https://cdn4.vectorstock.com/i/thumb-large/98/08/default-photo-placeholder-vector-20889808.jpg'}
  	]
 
  	
 
   }
+
+  presentLoading() {
+    this.loader = this.loadingCtrl.create({
+      content: "Publicando tu anuncio, Espere porfavor ❤",
+    });
+    this.loader.present();
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AnuncioPage');
@@ -78,21 +89,15 @@ guarda(data){
 
 			}
 
+      //this.presentLoading()
+
   
-     this.http.post('http://142.93.202.255:2000/guardakine',formData).subscribe(res =>
+     this.http.post('http://aniavestidos.com:5000/guardakine',formData).subscribe(res =>
   
    		  console.log(res),
 
-
-          err => {
-
-
-             this.view.dismiss()
-
-            
-
-
-          });
+             this.loader.dissmiss()
+    );
   
   
 
